@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Expenses {% endblock title %}
+{% block body %}
+    <table>
+    <tr>
+        <th>Date of Expense</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Mode of Expense</th>
+    </tr>
+    {% if expenses %}
+        {% for exp in expenses %}
+            <tr>
+                <td>{{ exp.exp_date }}</td>
+                <td>{{ exp.category }}</td>
+                <td>{{ exp.description }}</td>
+                <td>{{ exp.amount }}</td>
+                <td>{{ exp.mode }}</td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+{% endblock body %}
+
